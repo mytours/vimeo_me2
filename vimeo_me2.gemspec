@@ -6,22 +6,16 @@ require 'vimeo_me2/version'
 Gem::Specification.new do |spec|
   spec.name          = "vimeo_me2"
   spec.version       = VimeoMe2::VERSION
-  spec.authors       = ["Boris"]
+  spec.authors       = ["Bo-oz"]
   spec.email         = ["boristoet80@gmail.com"]
 
-  spec.summary       = "Temp"
-  spec.description   = "Temp"
-  spec.homepage      = "https://github.com/bo-oz/vimeo_me2"
+  spec.summary       = "Ruby client for the Vimeo API"
+  spec.description   = "A lightweight Ruby wrapper around the Vimeo API (v3) for managing videos, users, albums, comments, presets and uploads."
+  spec.homepage      = "https://github.com/mytours/vimeo_me2"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "http://mygemserver.com"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  spec.metadata["homepage_uri"]          = spec.homepage
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -30,11 +24,14 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 2.1.2"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "vcr", "~> 3.0.3"
-  spec.add_development_dependency "webmock", "~> 3.0.1"
+  spec.required_ruby_version = ">= 3.1"
 
-  spec.add_runtime_dependency "httparty",">= 0.14.0"
+  spec.add_development_dependency "bundler", ">= 2.4"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.13"
+  spec.add_development_dependency "vcr", "~> 6.4"
+  spec.add_development_dependency "webmock", "~> 3.34"
+  spec.add_development_dependency "simplecov", "~> 0.22"
+
+  spec.add_runtime_dependency "httparty", ">= 0.21", "< 1.0"
 end
