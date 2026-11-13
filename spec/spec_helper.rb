@@ -11,5 +11,5 @@ end
 SimpleCov.start do
   add_filter '/spec/'
   add_group 'Files', '/lib/**/*'
-  track_files "lib/vimeo_mw2/**/*.rb"
+  track_files "lib/vimeo_me2/**/*.rb"
 end
